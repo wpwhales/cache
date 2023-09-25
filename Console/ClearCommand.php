@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Cache\Console;
+namespace WPWhales\Cache\Console;
 
-use Illuminate\Cache\CacheManager;
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
+use WPWhales\Cache\CacheManager;
+use WPWhales\Console\Command;
+use WPWhales\Filesystem\Filesystem;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
@@ -29,22 +29,22 @@ class ClearCommand extends Command
     /**
      * The cache manager instance.
      *
-     * @var \Illuminate\Cache\CacheManager
+     * @var \WPWhales\Cache\CacheManager
      */
     protected $cache;
 
     /**
      * The filesystem instance.
      *
-     * @var \Illuminate\Filesystem\Filesystem
+     * @var \WPWhales\Filesystem\Filesystem
      */
     protected $files;
 
     /**
      * Create a new cache clear command instance.
      *
-     * @param  \Illuminate\Cache\CacheManager  $cache
-     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  \WPWhales\Cache\CacheManager  $cache
+     * @param  \WPWhales\Filesystem\Filesystem  $files
      * @return void
      */
     public function __construct(CacheManager $cache, Filesystem $files)
@@ -102,7 +102,7 @@ class ClearCommand extends Command
     /**
      * Get the cache instance for the command.
      *
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function cache()
     {

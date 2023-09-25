@@ -1,20 +1,20 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Contracts\Redis\Factory as Redis;
-use Illuminate\Redis\Connections\PhpRedisConnection;
-use Illuminate\Redis\Connections\PredisConnection;
-use Illuminate\Support\LazyCollection;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Contracts\Redis\Factory as Redis;
+use WPWhales\Redis\Connections\PhpRedisConnection;
+use WPWhales\Redis\Connections\PredisConnection;
+use WPWhales\Support\LazyCollection;
+use WPWhales\Support\Str;
 
 class RedisStore extends TaggableStore implements LockProvider
 {
     /**
      * The Redis factory implementation.
      *
-     * @var \Illuminate\Contracts\Redis\Factory
+     * @var \WPWhales\Contracts\Redis\Factory
      */
     protected $redis;
 
@@ -42,7 +42,7 @@ class RedisStore extends TaggableStore implements LockProvider
     /**
      * Create a new Redis store.
      *
-     * @param  \Illuminate\Contracts\Redis\Factory  $redis
+     * @param  \WPWhales\Contracts\Redis\Factory  $redis
      * @param  string  $prefix
      * @param  string  $connection
      * @return void
@@ -200,7 +200,7 @@ class RedisStore extends TaggableStore implements LockProvider
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function lock($name, $seconds = 0, $owner = null)
     {
@@ -220,7 +220,7 @@ class RedisStore extends TaggableStore implements LockProvider
      *
      * @param  string  $name
      * @param  string  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function restoreLock($name, $owner)
     {
@@ -266,7 +266,7 @@ class RedisStore extends TaggableStore implements LockProvider
      * Begin executing a new tags operation.
      *
      * @param  array|mixed  $names
-     * @return \Illuminate\Cache\RedisTaggedCache
+     * @return \WPWhales\Cache\RedisTaggedCache
      */
     public function tags($names)
     {
@@ -279,7 +279,7 @@ class RedisStore extends TaggableStore implements LockProvider
      * Get a collection of all of the cache tags currently being used.
      *
      * @param  int  $chunkSize
-     * @return \Illuminate\Support\LazyCollection
+     * @return \WPWhales\Support\LazyCollection
      */
     protected function currentTags($chunkSize = 1000)
     {
@@ -323,7 +323,7 @@ class RedisStore extends TaggableStore implements LockProvider
     /**
      * Get the Redis connection instance.
      *
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      */
     public function connection()
     {
@@ -333,7 +333,7 @@ class RedisStore extends TaggableStore implements LockProvider
     /**
      * Get the Redis connection instance that should be used to manage locks.
      *
-     * @return \Illuminate\Redis\Connections\Connection
+     * @return \WPWhales\Redis\Connections\Connection
      */
     public function lockConnection()
     {
@@ -367,7 +367,7 @@ class RedisStore extends TaggableStore implements LockProvider
     /**
      * Get the Redis database instance.
      *
-     * @return \Illuminate\Contracts\Redis\Factory
+     * @return \WPWhales\Contracts\Redis\Factory
      */
     public function getRedis()
     {

@@ -1,20 +1,20 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 class RedisLock extends Lock
 {
     /**
      * The Redis factory implementation.
      *
-     * @var \Illuminate\Redis\Connections\Connection
+     * @var \WPWhales\Redis\Connections\Connection
      */
     protected $redis;
 
     /**
      * Create a new lock instance.
      *
-     * @param  \Illuminate\Redis\Connections\Connection  $redis
+     * @param  \WPWhales\Redis\Connections\Connection  $redis
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner

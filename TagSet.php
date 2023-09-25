@@ -1,15 +1,15 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Cache\Store;
+use WPWhales\Contracts\Cache\Store;
 
 class TagSet
 {
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Store
+     * @var \WPWhales\Contracts\Cache\Store
      */
     protected $store;
 
@@ -23,7 +23,7 @@ class TagSet
     /**
      * Create a new TagSet instance.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Contracts\Cache\Store  $store
      * @param  array  $names
      * @return void
      */

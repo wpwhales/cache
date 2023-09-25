@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Cache\RateLimiting;
+namespace WPWhales\Cache\RateLimiting;
 
 class GlobalLimit extends Limit
 {

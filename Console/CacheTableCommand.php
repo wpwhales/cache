@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Cache\Console;
+namespace WPWhales\Cache\Console;
 
-use Illuminate\Console\Command;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\Composer;
+use WPWhales\Console\Command;
+use WPWhales\Filesystem\Filesystem;
+use WPWhales\Support\Composer;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'cache:table')]
@@ -27,12 +27,12 @@ class CacheTableCommand extends Command
     /**
      * The filesystem instance.
      *
-     * @var \Illuminate\Filesystem\Filesystem
+     * @var \WPWhales\Filesystem\Filesystem
      */
     protected $files;
 
     /**
-     * @var \Illuminate\Support\Composer
+     * @var \WPWhales\Support\Composer
      *
      * @deprecated Will be removed in a future Laravel version.
      */
@@ -41,8 +41,8 @@ class CacheTableCommand extends Command
     /**
      * Create a new cache table command instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
-     * @param  \Illuminate\Support\Composer  $composer
+     * @param  \WPWhales\Filesystem\Filesystem  $files
+     * @param  \WPWhales\Support\Composer  $composer
      * @return void
      */
     public function __construct(Filesystem $files, Composer $composer)

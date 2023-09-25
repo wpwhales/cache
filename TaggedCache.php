@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Cache\Store;
+use WPWhales\Contracts\Cache\Store;
 
 class TaggedCache extends Repository
 {
@@ -13,15 +13,15 @@ class TaggedCache extends Repository
     /**
      * The tag set instance.
      *
-     * @var \Illuminate\Cache\TagSet
+     * @var \WPWhales\Cache\TagSet
      */
     protected $tags;
 
     /**
      * Create a new tagged cache instance.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
-     * @param  \Illuminate\Cache\TagSet  $tags
+     * @param  \WPWhales\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Cache\TagSet  $tags
      * @return void
      */
     public function __construct(Store $store, TagSet $tags)
@@ -105,7 +105,7 @@ class TaggedCache extends Repository
     /**
      * Fire an event for this cache instance.
      *
-     * @param  \Illuminate\Cache\Events\CacheEvent  $event
+     * @param  \WPWhales\Cache\Events\CacheEvent  $event
      * @return void
      */
     protected function event($event)
@@ -116,7 +116,7 @@ class TaggedCache extends Repository
     /**
      * Get the tag set instance.
      *
-     * @return \Illuminate\Cache\TagSet
+     * @return \WPWhales\Cache\TagSet
      */
     public function getTags()
     {

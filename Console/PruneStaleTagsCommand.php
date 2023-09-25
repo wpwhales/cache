@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Cache\Console;
+namespace WPWhales\Cache\Console;
 
-use Illuminate\Cache\CacheManager;
-use Illuminate\Cache\RedisStore;
-use Illuminate\Console\Command;
+use WPWhales\Cache\CacheManager;
+use WPWhales\Cache\RedisStore;
+use WPWhales\Console\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
@@ -28,7 +28,7 @@ class PruneStaleTagsCommand extends Command
     /**
      * Execute the console command.
      *
-     * @param  \Illuminate\Cache\CacheManager  $cache
+     * @param  \WPWhales\Cache\CacheManager  $cache
      * @return void
      */
     public function handle(CacheManager $cache)

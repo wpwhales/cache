@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Support\ServiceProvider;
+use WPWhales\Contracts\Support\DeferrableProvider;
+use WPWhales\Support\ServiceProvider;
 use Symfony\Component\Cache\Adapter\Psr16Adapter;
 
 class CacheServiceProvider extends ServiceProvider implements DeferrableProvider

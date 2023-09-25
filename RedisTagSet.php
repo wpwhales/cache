@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Support\Carbon;
-use Illuminate\Support\LazyCollection;
+use WPWhales\Support\Carbon;
+use WPWhales\Support\LazyCollection;
 
 class RedisTagSet extends TagSet
 {
@@ -31,7 +31,7 @@ class RedisTagSet extends TagSet
     /**
      * Get all of the cache entry keys for the tag set.
      *
-     * @return \Illuminate\Support\LazyCollection
+     * @return \WPWhales\Support\LazyCollection
      */
     public function entries()
     {

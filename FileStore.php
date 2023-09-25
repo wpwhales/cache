@@ -1,23 +1,23 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use Exception;
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Contracts\Filesystem\LockTimeoutException;
-use Illuminate\Filesystem\Filesystem;
-use Illuminate\Filesystem\LockableFile;
-use Illuminate\Support\InteractsWithTime;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Contracts\Cache\Store;
+use WPWhales\Contracts\Filesystem\LockTimeoutException;
+use WPWhales\Filesystem\Filesystem;
+use WPWhales\Filesystem\LockableFile;
+use WPWhales\Support\InteractsWithTime;
 
 class FileStore implements Store, LockProvider
 {
     use InteractsWithTime, RetrievesMultipleKeys;
 
     /**
-     * The Illuminate Filesystem instance.
+     * The WPWhales Filesystem instance.
      *
-     * @var \Illuminate\Filesystem\Filesystem
+     * @var \WPWhales\Filesystem\Filesystem
      */
     protected $files;
 
@@ -45,7 +45,7 @@ class FileStore implements Store, LockProvider
     /**
      * Create a new file cache store instance.
      *
-     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @param  \WPWhales\Filesystem\Filesystem  $files
      * @param  string  $directory
      * @param  int|null  $filePermission
      * @return void
@@ -213,7 +213,7 @@ class FileStore implements Store, LockProvider
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function lock($name, $seconds = 0, $owner = null)
     {
@@ -232,7 +232,7 @@ class FileStore implements Store, LockProvider
      *
      * @param  string  $name
      * @param  string  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function restoreLock($name, $owner)
     {
@@ -361,7 +361,7 @@ class FileStore implements Store, LockProvider
     /**
      * Get the Filesystem instance.
      *
-     * @return \Illuminate\Filesystem\Filesystem
+     * @return \WPWhales\Filesystem\Filesystem
      */
     public function getFilesystem()
     {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Redis\Connections\PhpRedisConnection;
+use WPWhales\Redis\Connections\PhpRedisConnection;
 
 class PhpRedisLock extends RedisLock
 {
     /**
      * Create a new phpredis lock instance.
      *
-     * @param  \Illuminate\Redis\Connections\PhpRedisConnection  $redis
+     * @param  \WPWhales\Redis\Connections\PhpRedisConnection  $redis
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner

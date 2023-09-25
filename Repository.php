@@ -1,24 +1,24 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use ArrayAccess;
 use BadMethodCallException;
 use Closure;
 use DateTimeInterface;
-use Illuminate\Cache\Events\CacheHit;
-use Illuminate\Cache\Events\CacheMissed;
-use Illuminate\Cache\Events\KeyForgotten;
-use Illuminate\Cache\Events\KeyWritten;
-use Illuminate\Contracts\Cache\Repository as CacheContract;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Traits\Macroable;
+use WPWhales\Cache\Events\CacheHit;
+use WPWhales\Cache\Events\CacheMissed;
+use WPWhales\Cache\Events\KeyForgotten;
+use WPWhales\Cache\Events\KeyWritten;
+use WPWhales\Contracts\Cache\Repository as CacheContract;
+use WPWhales\Contracts\Cache\Store;
+use WPWhales\Contracts\Events\Dispatcher;
+use WPWhales\Support\Carbon;
+use WPWhales\Support\InteractsWithTime;
+use WPWhales\Support\Traits\Macroable;
 
 /**
- * @mixin \Illuminate\Contracts\Cache\Store
+ * @mixin \WPWhales\Contracts\Cache\Store
  */
 class Repository implements ArrayAccess, CacheContract
 {
@@ -30,14 +30,14 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Store
+     * @var \WPWhales\Contracts\Cache\Store
      */
     protected $store;
 
     /**
      * The event dispatcher implementation.
      *
-     * @var \Illuminate\Contracts\Events\Dispatcher
+     * @var \WPWhales\Contracts\Events\Dispatcher
      */
     protected $events;
 
@@ -51,7 +51,7 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * Create a new cache repository instance.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Contracts\Cache\Store  $store
      * @return void
      */
     public function __construct(Store $store)
@@ -497,7 +497,7 @@ class Repository implements ArrayAccess, CacheContract
      * Begin executing a new tags operation if the store supports it.
      *
      * @param  array|mixed  $names
-     * @return \Illuminate\Cache\TaggedCache
+     * @return \WPWhales\Cache\TaggedCache
      *
      * @throws \BadMethodCallException
      */
@@ -580,7 +580,7 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * Get the cache store implementation.
      *
-     * @return \Illuminate\Contracts\Cache\Store
+     * @return \WPWhales\Contracts\Cache\Store
      */
     public function getStore()
     {
@@ -590,7 +590,7 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * Set the cache store implementation.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Contracts\Cache\Store  $store
      * @return static
      */
     public function setStore($store)
@@ -614,7 +614,7 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * Get the event dispatcher instance.
      *
-     * @return \Illuminate\Contracts\Events\Dispatcher
+     * @return \WPWhales\Contracts\Events\Dispatcher
      */
     public function getEventDispatcher()
     {
@@ -624,7 +624,7 @@ class Repository implements ArrayAccess, CacheContract
     /**
      * Set the event dispatcher instance.
      *
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
+     * @param  \WPWhales\Contracts\Events\Dispatcher  $events
      * @return void
      */
     public function setEventDispatcher(Dispatcher $events)

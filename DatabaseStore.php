@@ -1,16 +1,16 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use Closure;
 use Exception;
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Database\PostgresConnection;
-use Illuminate\Database\QueryException;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Contracts\Cache\Store;
+use WPWhales\Database\ConnectionInterface;
+use WPWhales\Database\PostgresConnection;
+use WPWhales\Database\QueryException;
+use WPWhales\Support\InteractsWithTime;
+use WPWhales\Support\Str;
 
 class DatabaseStore implements LockProvider, Store
 {
@@ -19,14 +19,14 @@ class DatabaseStore implements LockProvider, Store
     /**
      * The database connection instance.
      *
-     * @var \Illuminate\Database\ConnectionInterface
+     * @var \WPWhales\Database\ConnectionInterface
      */
     protected $connection;
 
     /**
      * The database connection instance that should be used to manage locks.
      *
-     * @var \Illuminate\Database\ConnectionInterface
+     * @var \WPWhales\Database\ConnectionInterface
      */
     protected $lockConnection;
 
@@ -68,7 +68,7 @@ class DatabaseStore implements LockProvider, Store
     /**
      * Create a new database store.
      *
-     * @param  \Illuminate\Database\ConnectionInterface  $connection
+     * @param  \WPWhales\Database\ConnectionInterface  $connection
      * @param  string  $table
      * @param  string  $prefix
      * @param  string  $lockTable
@@ -276,7 +276,7 @@ class DatabaseStore implements LockProvider, Store
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function lock($name, $seconds = 0, $owner = null)
     {
@@ -296,7 +296,7 @@ class DatabaseStore implements LockProvider, Store
      *
      * @param  string  $name
      * @param  string  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function restoreLock($name, $owner)
     {
@@ -331,7 +331,7 @@ class DatabaseStore implements LockProvider, Store
     /**
      * Get a query builder for the cache table.
      *
-     * @return \Illuminate\Database\Query\Builder
+     * @return \WPWhales\Database\Query\Builder
      */
     protected function table()
     {
@@ -341,7 +341,7 @@ class DatabaseStore implements LockProvider, Store
     /**
      * Get the underlying database connection.
      *
-     * @return \Illuminate\Database\ConnectionInterface
+     * @return \WPWhales\Database\ConnectionInterface
      */
     public function getConnection()
     {
@@ -351,7 +351,7 @@ class DatabaseStore implements LockProvider, Store
     /**
      * Specify the name of the connection that should be used to manage locks.
      *
-     * @param  \Illuminate\Database\ConnectionInterface  $connection
+     * @param  \WPWhales\Database\ConnectionInterface  $connection
      * @return $this
      */
     public function setLockConnection($connection)

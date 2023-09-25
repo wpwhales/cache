@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Support\InteractsWithTime;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Support\InteractsWithTime;
 use Memcached;
 use ReflectionMethod;
 
@@ -184,7 +184,7 @@ class MemcachedStore extends TaggableStore implements LockProvider
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function lock($name, $seconds = 0, $owner = null)
     {
@@ -196,7 +196,7 @@ class MemcachedStore extends TaggableStore implements LockProvider
      *
      * @param  string  $name
      * @param  string  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function restoreLock($name, $owner)
     {

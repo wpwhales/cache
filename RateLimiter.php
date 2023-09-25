@@ -1,10 +1,10 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use Closure;
-use Illuminate\Contracts\Cache\Repository as Cache;
-use Illuminate\Support\InteractsWithTime;
+use WPWhales\Contracts\Cache\Repository as Cache;
+use WPWhales\Support\InteractsWithTime;
 
 class RateLimiter
 {
@@ -13,7 +13,7 @@ class RateLimiter
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Repository
+     * @var \WPWhales\Contracts\Cache\Repository
      */
     protected $cache;
 
@@ -27,7 +27,7 @@ class RateLimiter
     /**
      * Create a new rate limiter instance.
      *
-     * @param  \Illuminate\Contracts\Cache\Repository  $cache
+     * @param  \WPWhales\Contracts\Cache\Repository  $cache
      * @return void
      */
     public function __construct(Cache $cache)

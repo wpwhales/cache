@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Cache\Events;
+namespace WPWhales\Cache\Events;
 
 class KeyWritten extends CacheEvent
 {

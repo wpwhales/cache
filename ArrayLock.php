@@ -1,22 +1,22 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Support\Carbon;
+use WPWhales\Support\Carbon;
 
 class ArrayLock extends Lock
 {
     /**
      * The parent array cache store.
      *
-     * @var \Illuminate\Cache\ArrayStore
+     * @var \WPWhales\Cache\ArrayStore
      */
     protected $store;
 
     /**
      * Create a new lock instance.
      *
-     * @param  \Illuminate\Cache\ArrayStore  $store
+     * @param  \WPWhales\Cache\ArrayStore  $store
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner

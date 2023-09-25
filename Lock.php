@@ -1,12 +1,12 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Contracts\Cache\Lock as LockContract;
-use Illuminate\Contracts\Cache\LockTimeoutException;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Sleep;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Cache\Lock as LockContract;
+use WPWhales\Contracts\Cache\LockTimeoutException;
+use WPWhales\Support\InteractsWithTime;
+use WPWhales\Support\Sleep;
+use WPWhales\Support\Str;
 
 abstract class Lock implements LockContract
 {
@@ -108,7 +108,7 @@ abstract class Lock implements LockContract
      * @param  callable|null  $callback
      * @return mixed
      *
-     * @throws \Illuminate\Contracts\Cache\LockTimeoutException
+     * @throws \WPWhales\Contracts\Cache\LockTimeoutException
      */
     public function block($seconds, $callback = null)
     {

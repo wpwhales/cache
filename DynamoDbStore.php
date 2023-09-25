@@ -1,14 +1,14 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use Aws\DynamoDb\DynamoDbClient;
 use Aws\DynamoDb\Exception\DynamoDbException;
-use Illuminate\Contracts\Cache\LockProvider;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\InteractsWithTime;
-use Illuminate\Support\Str;
+use WPWhales\Contracts\Cache\LockProvider;
+use WPWhales\Contracts\Cache\Store;
+use WPWhales\Support\Carbon;
+use WPWhales\Support\InteractsWithTime;
+use WPWhales\Support\Str;
 use RuntimeException;
 
 class DynamoDbStore implements LockProvider, Store
@@ -408,7 +408,7 @@ class DynamoDbStore implements LockProvider, Store
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function lock($name, $seconds = 0, $owner = null)
     {
@@ -420,7 +420,7 @@ class DynamoDbStore implements LockProvider, Store
      *
      * @param  string  $name
      * @param  string  $owner
-     * @return \Illuminate\Contracts\Cache\Lock
+     * @return \WPWhales\Contracts\Cache\Lock
      */
     public function restoreLock($name, $owner)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 class ApcStore extends TaggableStore
 {
@@ -9,7 +9,7 @@ class ApcStore extends TaggableStore
     /**
      * The APC wrapper instance.
      *
-     * @var \Illuminate\Cache\ApcWrapper
+     * @var \WPWhales\Cache\ApcWrapper
      */
     protected $apc;
 
@@ -23,7 +23,7 @@ class ApcStore extends TaggableStore
     /**
      * Create a new APC store.
      *
-     * @param  \Illuminate\Cache\ApcWrapper  $apc
+     * @param  \WPWhales\Cache\ApcWrapper  $apc
      * @param  string  $prefix
      * @return void
      */

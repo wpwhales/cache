@@ -1,9 +1,9 @@
 <?php
 
-namespace Illuminate\Cache\Console;
+namespace WPWhales\Cache\Console;
 
-use Illuminate\Cache\CacheManager;
-use Illuminate\Console\Command;
+use WPWhales\Cache\CacheManager;
+use WPWhales\Console\Command;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'cache:forget')]
@@ -26,14 +26,14 @@ class ForgetCommand extends Command
     /**
      * The cache manager instance.
      *
-     * @var \Illuminate\Cache\CacheManager
+     * @var \WPWhales\Cache\CacheManager
      */
     protected $cache;
 
     /**
      * Create a new cache clear command instance.
      *
-     * @param  \Illuminate\Cache\CacheManager  $cache
+     * @param  \WPWhales\Cache\CacheManager  $cache
      * @return void
      */
     public function __construct(CacheManager $cache)

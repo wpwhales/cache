@@ -1,16 +1,16 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
-use Illuminate\Database\Connection;
-use Illuminate\Database\QueryException;
+use WPWhales\Database\Connection;
+use WPWhales\Database\QueryException;
 
 class DatabaseLock extends Lock
 {
     /**
      * The database connection instance.
      *
-     * @var \Illuminate\Database\Connection
+     * @var \WPWhales\Database\Connection
      */
     protected $connection;
 
@@ -38,7 +38,7 @@ class DatabaseLock extends Lock
     /**
      * Create a new lock instance.
      *
-     * @param  \Illuminate\Database\Connection  $connection
+     * @param  \WPWhales\Database\Connection  $connection
      * @param  string  $table
      * @param  string  $name
      * @param  int  $seconds

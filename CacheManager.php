@@ -1,25 +1,25 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 use Aws\DynamoDb\DynamoDbClient;
 use Closure;
-use Illuminate\Contracts\Cache\Factory as FactoryContract;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
-use Illuminate\Support\Arr;
+use WPWhales\Contracts\Cache\Factory as FactoryContract;
+use WPWhales\Contracts\Cache\Store;
+use WPWhales\Contracts\Events\Dispatcher as DispatcherContract;
+use WPWhales\Support\Arr;
 use InvalidArgumentException;
 
 /**
- * @mixin \Illuminate\Cache\Repository
- * @mixin \Illuminate\Contracts\Cache\LockProvider
+ * @mixin \WPWhales\Cache\Repository
+ * @mixin \WPWhales\Contracts\Cache\LockProvider
  */
 class CacheManager implements FactoryContract
 {
     /**
      * The application instance.
      *
-     * @var \Illuminate\Contracts\Foundation\Application
+     * @var \WPWhales\Contracts\Foundation\Application
      */
     protected $app;
 
@@ -40,7 +40,7 @@ class CacheManager implements FactoryContract
     /**
      * Create a new Cache manager instance.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
      * @return void
      */
     public function __construct($app)
@@ -52,7 +52,7 @@ class CacheManager implements FactoryContract
      * Get a cache store instance by name, wrapped in a repository.
      *
      * @param  string|null  $name
-     * @return \Illuminate\Contracts\Cache\Repository
+     * @return \WPWhales\Contracts\Cache\Repository
      */
     public function store($name = null)
     {
@@ -65,7 +65,7 @@ class CacheManager implements FactoryContract
      * Get a cache driver instance.
      *
      * @param  string|null  $driver
-     * @return \Illuminate\Contracts\Cache\Repository
+     * @return \WPWhales\Contracts\Cache\Repository
      */
     public function driver($driver = null)
     {
@@ -76,7 +76,7 @@ class CacheManager implements FactoryContract
      * Resolve the given store.
      *
      * @param  string  $name
-     * @return \Illuminate\Contracts\Cache\Repository
+     * @return \WPWhales\Contracts\Cache\Repository
      *
      * @throws \InvalidArgumentException
      */
@@ -116,7 +116,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the APC cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createApcDriver(array $config)
     {
@@ -129,7 +129,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the array cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createArrayDriver(array $config)
     {
@@ -140,7 +140,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the file cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createFileDriver(array $config)
     {
@@ -154,7 +154,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the Memcached cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createMemcachedDriver(array $config)
     {
@@ -173,7 +173,7 @@ class CacheManager implements FactoryContract
     /**
      * Create an instance of the Null cache driver.
      *
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createNullDriver()
     {
@@ -184,7 +184,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the Redis cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createRedisDriver(array $config)
     {
@@ -203,7 +203,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the database cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createDatabaseDriver(array $config)
     {
@@ -227,7 +227,7 @@ class CacheManager implements FactoryContract
      * Create an instance of the DynamoDB cache driver.
      *
      * @param  array  $config
-     * @return \Illuminate\Cache\Repository
+     * @return \WPWhales\Cache\Repository
      */
     protected function createDynamodbDriver(array $config)
     {
@@ -274,8 +274,8 @@ class CacheManager implements FactoryContract
     /**
      * Create a new cache repository with the given implementation.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
-     * @return \Illuminate\Cache\Repository
+     * @param  \WPWhales\Contracts\Cache\Store  $store
+     * @return \WPWhales\Cache\Repository
      */
     public function repository(Store $store)
     {
@@ -287,7 +287,7 @@ class CacheManager implements FactoryContract
     /**
      * Set the event dispatcher on the given repository instance.
      *
-     * @param  \Illuminate\Cache\Repository  $repository
+     * @param  \WPWhales\Cache\Repository  $repository
      * @return void
      */
     protected function setEventDispatcher(Repository $repository)
@@ -407,7 +407,7 @@ class CacheManager implements FactoryContract
     /**
      * Set the application instance used by the manager.
      *
-     * @param  \Illuminate\Contracts\Foundation\Application  $app
+     * @param  \WPWhales\Contracts\Foundation\Application  $app
      * @return $this
      */
     public function setApplication($app)

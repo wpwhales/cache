@@ -1,20 +1,20 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 class CacheLock extends Lock
 {
     /**
      * The cache store implementation.
      *
-     * @var \Illuminate\Contracts\Cache\Store
+     * @var \WPWhales\Contracts\Cache\Store
      */
     protected $store;
 
     /**
      * Create a new lock instance.
      *
-     * @param  \Illuminate\Contracts\Cache\Store  $store
+     * @param  \WPWhales\Contracts\Cache\Store  $store
      * @param  string  $name
      * @param  int  $seconds
      * @param  string|null  $owner

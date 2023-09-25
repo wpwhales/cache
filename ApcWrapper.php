@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Cache;
+namespace WPWhales\Cache;
 
 class ApcWrapper
 {
